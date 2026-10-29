@@ -21,21 +21,24 @@ def main():
         changes = 0
         level = ""
         while True:
-            diffculty_leve_choice = int(input("Enter your choice: "))
-            if 1 <= diffculty_leve_choice and 3 >= diffculty_leve_choice:
-                if diffculty_leve_choice == 1:
-                    changes = 10
-                    level = "Easy"
-                elif diffculty_leve_choice == 2:
-                    changes = 5
-                    level = "Medium"
-                elif diffculty_leve_choice == 3:
-                    changes = 3
-                    level = "Hard"
-                break
-            else:
-                print("Please select diffculty level (1,2,3)")
-                
+            try:
+                diffculty_leve_choice = int(input("Enter your choice: "))
+
+                if 1 <= diffculty_leve_choice and 3 >= diffculty_leve_choice:
+                    if diffculty_leve_choice == 1:
+                        changes = 10
+                        level = "Easy"
+                    elif diffculty_leve_choice == 2:
+                        changes = 5
+                        level = "Medium"
+                    elif diffculty_leve_choice == 3:
+                        changes = 3
+                        level = "Hard"
+                    break
+                else:
+                    print("Please select diffculty level (1,2,3)")
+            except ValueError:
+                print("Enter a Number")    
                 
 
         print(f"Great! You have selected the {level} difficulty level.")
